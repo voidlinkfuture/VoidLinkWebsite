@@ -74,10 +74,10 @@ nav .btn{padding:10px 18px;font-size:13px}
 .arrows{display:flex;gap:8px}.arrows button{width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font-size:18px;cursor:pointer;transition:.25s}.arrows button:hover{background:#fff;color:var(--d)}
 .dots{display:flex;gap:8px}.dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);transition:.3s}.dots i.on{background:#fff;width:22px;border-radius:4px}
 .track{position:relative;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad) 8px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.track::-webkit-scrollbar{display:none}
-.card{flex:0 0 min(84vw,390px);scroll-snap-align:start;min-height:430px;padding:28px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(22px) saturate(1.2);-webkit-backdrop-filter:blur(22px) saturate(1.2);display:flex;flex-direction:column;transition:background .3s,transform .3s}
+.card{flex:0 0 min(84vw,390px);scroll-snap-align:start;min-height:480px;padding:28px;border-radius:14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(22px) saturate(1.2);-webkit-backdrop-filter:blur(22px) saturate(1.2);display:flex;flex-direction:column;transition:background .3s,transform .3s}
 .card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px)}
-.card svg{width:44px;height:44px;stroke:#fff;fill:none;stroke-width:1;margin-bottom:auto}
-.card .mono{color:var(--g2);margin:60px 0 14px}.card h3{font-size:22px;letter-spacing:-.035em;font-weight:500;margin-bottom:14px}.card p{color:var(--g2);font-size:15px;line-height:1.5}
+.card .viz{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:8px;margin-bottom:auto;background:#0a0a0a}
+.card .mono{color:var(--g2);margin:18px 0 10px}.card h3{font-size:22px;letter-spacing:-.035em;font-weight:500;margin-bottom:14px}.card p{color:var(--g2);font-size:15px;line-height:1.5}
 /* logs */
 .log{background:var(--bg)}.log h2{font-size:clamp(30px,4.6vw,68px);margin-bottom:clamp(40px,6vw,80px)}
 .grid{display:grid;gap:14px}@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}}@media(min-width:1100px){.grid{grid-template-columns:repeat(4,1fr)}}
@@ -249,14 +249,16 @@ field(document.getElementById('c2'),{n:18,y:.3});
 field(document.getElementById('c3'),{dots:1,n:14,y:.62});
 
 /* carousel */
-const D=[['Permanent lunar base','The first outpost: helium-3, polar ice, reduced gravity for launches. The testbed for building off Earth before Mars.','<circle cx="22" cy="22" r="17"/><path d="M30 8a17 17 0 0 0 0 28"/>'],
-['Colonization of Mars','450 million km on average, atmosphere at 0.6% of Earth pressure. The first planet where Earth life will try to take independent root.','<circle cx="22" cy="22" r="11"/><ellipse cx="22" cy="22" rx="20" ry="6" transform="rotate(-20 22 22)"/>'],
-['Terraforming & ISRU','Producing oxygen, water and fuel on site. From lunar regolith to Martian methane: surviving without depending on Earth.','<path d="M22 4 40 38H4z"/><path d="M13 28h18"/>'],
-['Interplanetary transport','100% reusable launch vehicles, nuclear thermal propulsion, in-orbit refueling. Space travel as routine infrastructure.','<path d="M4 38C14 38 22 30 26 18l12-12"/><path d="M28 6h10v10"/>'],
-['Orbital data centers','Servers powered by constantly exposed solar panels and passively cooled by the vacuum. Computing migrates beyond thermal and land limits.','<rect x="8" y="6" width="28" height="9"/><rect x="8" y="18" width="28" height="9"/><rect x="8" y="30" width="28" height="9"/>'],
-['Planetary-scale robotics','Billions of autonomous units that build, mine and expand. Physical labor becomes a manufacturing problem, not a population problem.','<rect x="9" y="12" width="26" height="22" rx="3"/><path d="M22 12V5M16 22h.1M28 22h.1M16 28h12"/>']];
+const D=[
+['Permanent lunar base','The first outpost: helium-3, polar ice, reduced gravity for launches. The testbed for building off Earth before Mars.','img/horizon/01.png'],
+['Colonization of Mars','450 million km on average, atmosphere at 0.6% of Earth pressure. The first planet where Earth life will try to take independent root.','img/horizon/02.png'],
+['Terraforming & ISRU','Producing oxygen, water and fuel on site. From lunar regolith to Martian methane: surviving without depending on Earth.','img/horizon/03.png'],
+['Interplanetary transport','100% reusable launch vehicles, nuclear thermal propulsion, in-orbit refueling. Space travel as routine infrastructure.','img/horizon/04.png'],
+['Orbital data centers','Servers powered by constantly exposed solar panels and passively cooled by the vacuum. Computing migrates beyond thermal and land limits.','img/horizon/05.png'],
+['Planetary-scale robotics','Billions of autonomous units that build, mine and expand. Physical labor becomes a manufacturing problem, not a population problem.','img/horizon/06.png']
+];
 const T=document.getElementById('trk'),dt=document.getElementById('dots');
-D.forEach((d,i)=>{T.insertAdjacentHTML('beforeend','<article class="card"><svg viewBox="0 0 44 44">'+d[2]+'</svg><span class="mono">0'+(i+1)+' / 06</span><h3>'+d[0]+'</h3><p>'+d[1]+'</p></article>');dt.insertAdjacentHTML('beforeend','<i></i>')});
+D.forEach((d,i)=>{T.insertAdjacentHTML('beforeend','<article class="card"><img class="viz" src="'+d[2]+'" alt="'+d[0]+'" loading="lazy"><span class="mono">0'+(i+1)+' / 06</span><h3>'+d[0]+'</h3><p>'+d[1]+'</p></article>');dt.insertAdjacentHTML('beforeend','<i></i>')});
 const cs=[...T.children],ds=[...dt.children];
 const upd=()=>{const st=cs[1].offsetLeft-cs[0].offsetLeft;let i=Math.round(T.scrollLeft/st);i=Math.min(i,cs.length-1);ds.forEach((e,k)=>e.classList.toggle('on',k===i))};
 T.addEventListener('scroll',upd,{passive:true});upd();
