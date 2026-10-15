@@ -294,8 +294,10 @@ gsap.from('.f',{opacity:0,y:30,stagger:.1,duration:.8,scrollTrigger:{trigger:'#f
 /* views, theme, menu */
 const LG=document.querySelector('.logo img').src;
 const UP=[
-{t:'x',url:'https://x.com/VoidLink_space',date:'2026-10-13',cap:'Example video update from X. Replace url, date and caption.'},
-{t:'img',src:'',date:'2026-09-02',cap:'Example image update. Set src to a data URI.'},
+{t:'img',src:'img/updates/presentation-01.jpg',date:'2026-10-14',cap:'Payload-as-a-Service: the only path to scale orbital infrastructure. Presented at Cloud Computing Technologies. A satellite is payload + bus. The customer builds the differentiating payload. Structure, power, thermal, attitude, launch and operations are the service. Starcloud has demonstrated the first data-center-class compute in orbit — NVIDIA H100 on SC-1, first LLM trained beyond Earth. Continuous solar, radiative cooling in vacuum, zero terrestrial energy or land constraints. The chain is single: Launch → Payload-as-a-Service → Orbital Compute → Superintelligence. 0.73 → 1.00.'},
+{t:'img',src:'img/updates/slide-starcloud.jpg',date:'2026-10-14',cap:'Starcloud × NVIDIA: first data-center-class compute in orbit. SC-1 flew an H100. SC-3 targets Starship-class, 100+ kW. Vision: 88,000 satellites, ~20 GW orbital compute. Physics advantage is permanent.'},
+{t:'img',src:'img/updates/presentation-03.jpg',date:'2026-10-14',cap:'The customer brings the idea. The rest is a service. Payload → Integration → Operations → Data. Orbit in months, not years.'},
+{t:'x',url:'https://x.com/VoidLink_space',date:'2026-10-13',cap:'Example video update from X.'},
 {t:'x',url:'https://x.com/VoidLink_space',date:'2026-07-24',cap:'Second example video from X.'}];
 const fmt=d=>new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
 document.getElementById('feed').innerHTML=UP.sort((a,b)=>b.date.localeCompare(a.date)).map(u=>{const im=u.src?'<img src="'+u.src+'" alt="">':'<img class="wm" src="'+LG+'" alt="">';
