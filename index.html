@@ -117,7 +117,28 @@ nav .r{display:flex;align-items:center;gap:8px}.nc{display:none}
 .pj{display:grid;gap:14px}@media(min-width:760px){.pj{grid-template-columns:1fr 1fr}}
 .pc{background:var(--sf);border-radius:6px;padding:clamp(24px,3vw,40px);min-height:340px;display:flex;flex-direction:column;transition:background .3s,transform .3s}.pc:hover{background:var(--sf2);transform:translateY(-4px)}
 .pc h3{font-size:clamp(22px,2.4vw,32px);letter-spacing:-.04em;font-weight:500;margin:auto 0 14px}.pc p{color:var(--g);font-size:16px;max-width:42ch}.pc .mono{color:var(--g)}.pc .tg{margin-top:26px;color:var(--fg)}
-.feed{max-width:860px}.up{padding:44px 0;border-top:1px solid var(--ln)}.up:first-child{border-top:0;padding-top:0}
+.feed{max-width:860px}
+.article .back{display:inline-block;margin-bottom:28px;color:var(--g);transition:.2s}.article .back:hover{color:var(--fg)}
+.article h1{font-size:clamp(32px,5.5vw,72px);letter-spacing:-.045em;line-height:1.02;margin:12px 0 20px}
+.article .lead{color:var(--g);font-size:17px;max-width:48ch;margin-bottom:40px}
+.ahero{margin:0 0 48px;border-radius:14px;overflow:hidden;aspect-ratio:16/9;background:var(--d)}
+.ahero img{width:100%;height:100%;object-fit:cover;display:block}
+.abody{max-width:640px}
+.abody p{font-size:17px;line-height:1.55;margin-bottom:1.15em;color:var(--fg)}
+.abody h2{font-size:clamp(22px,3vw,32px);letter-spacing:-.03em;margin:48px 0 18px}
+.abody figure{margin:36px 0;border-radius:10px;overflow:hidden;background:var(--d)}
+.abody figure img{width:100%;display:block}
+.abody figcaption{font-size:13px;color:var(--g);padding:10px 0 0;font-family:var(--mono)}
+.steps{margin:24px 0 36px;padding:0;list-style:none;counter-reset:s}
+.steps li{position:relative;padding:14px 0 14px 48px;border-bottom:1px solid var(--ln);font-size:16px;line-height:1.4}
+.steps li:before{counter-increment:s;content:counter(s,decimal-leading-zero);position:absolute;left:0;font-family:var(--mono);font-size:13px;color:var(--g);top:16px}
+.anum{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:36px 0}
+@media(min-width:600px){.anum{grid-template-columns:repeat(4,1fr)}}
+.anum div{background:var(--sf);padding:20px 16px;border-radius:8px}
+.anum b{display:block;font-size:clamp(22px,3vw,28px);letter-spacing:-.04em;font-weight:500}
+.anum span{display:block;margin-top:6px;font-size:13px;color:var(--g);font-family:var(--mono)}
+.asign{margin-top:56px;font-size:15px;color:var(--g);line-height:1.5}
+.up{padding:44px 0;border-top:1px solid var(--ln)}.up:first-child{border-top:0;padding-top:0}
 .um{position:relative;display:block;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:var(--d)}.um img{width:100%;height:100%;object-fit:cover;display:block}.um img.wm{position:absolute;inset:0;margin:auto;width:84px;height:84px;opacity:.22}
 .pl{position:absolute;inset:0;display:grid;place-items:center}.pl i{width:76px;height:76px;border:1px solid rgba(255,255,255,.6);border-radius:50%;position:relative;transition:.3s}.pl i:after{content:"";position:absolute;left:31px;top:24px;border-left:20px solid #fff;border-top:14px solid transparent;border-bottom:14px solid transparent}.um:hover .pl i{background:rgba(255,255,255,.15);transform:scale(1.06)}
 .xl{position:absolute;left:18px;bottom:16px;color:#fff}
@@ -204,6 +225,66 @@ nav .r{display:flex;align-items:center;gap:8px}.nc{display:none}
 <main data-v="projects"><section class="sec pg"><span class="lab">// Projects</span><h2 class="sp">What we are building.</h2><p class="lead">Hardware, software and rockets: every project starts from a test and is measured with telemetry.</p><div class="pj"><article class="pc" data-r><span class="mono">01 · Rocketry</span><h3>VTVL Water Rocket</h3><p>Water-powered vertical takeoff and vertical landing rockets. Born in the garage in 2023, they remain VoidLink's primary goal.</p><span class="mono tg">Primary goal</span></article><article class="pc" data-r><span class="mono">02 · Propulsion</span><h3>Cold gas thrusters</h3><p>Development of cold gas thrusters: propulsion methods are studied starting from the data of our tests.</p><span class="mono tg">In development</span></article><article class="pc" data-r><span class="mono">03 · Hardware</span><h3>Telemetry modules</h3><p>Integrated data acquisition modules for VTVL systems and RF telemetry, with open data.</p><span class="mono tg">VTVL module v1</span></article><article class="pc" data-r><span class="mono">04 · Software</span><h3>Mission Control Dashboard</h3><p>Mission control dashboard: hardware telemetry and 3D flight visualization.</p><span class="mono tg">Software</span></article><article class="pc" data-r><span class="mono">05 · Software</span><h3>Flight Simulator</h3><p>Rocket flight simulator with 6-degree-of-freedom physics, in a single HTML file.</p><span class="mono tg">Software</span></article><article class="pc" data-r><span class="mono">06 · Outreach</span><h3>VoidLink Platform</h3><p>Open-source platform for science outreach and the rocketry community.</p><span class="mono tg">Open-source</span></article></div></section></main>
 <main data-v="researches"><section class="sec pg"><span class="lab">// Researches</span><h2 class="sp">What we are studying.</h2><p class="lead">Open research areas: from test data to autonomous intelligence for hostile environments.</p><div class="scale"><div class="lv" data-r><span class="n">01</span><h3>Cold gas propulsion</h3><p>Study of propulsion methods starting from data collected in tests.</p><span class="mono tag">Propulsion</span></div><div class="lv" data-r><span class="n">02</span><h3>Aerodynamics of VTVL launch vehicles</h3><p>Systematic study of rocket aerodynamics, since 2024.</p><span class="mono tag">Aerodynamics</span></div><div class="lv" data-r><span class="n">03</span><h3>RF telemetry & open data</h3><p>Field data acquisition and RF telemetry. Data is public and reproducible.</p><span class="mono tag">Telemetry</span></div><div class="lv" data-r><span class="n">04</span><h3>Autonomous edge AI</h3><p>Edge computing with autonomous AI for hostile environments and multiplanetary infrastructure, where latency to Earth prevents remote control.</p><span class="mono tag">Artificial intelligence</span></div></div></section></main>
 <main data-v="updates"><section class="sec pg"><span class="lab">// Updates</span><h2 class="sp">From the field.</h2><p class="lead">Videos from X and team articles, most recent first.</p><div class="feed" id="feed"></div></section></main>
+
+
+<main data-v="article-payload-as-a-service">
+<section class="sec pg article">
+  <a href="#/updates" class="mono back">← Updates</a>
+  <span class="lab">// Article · 14 October 2026</span>
+  <h1 class="sp">Payload-as-a-Service<br>The only way to scale</h1>
+  <p class="lead">Presented at Cloud Computing Technologies. Salvatore Siracusa — VoidLink.</p>
+
+  <figure class="ahero">
+    <img src="img/updates/presentation-01.jpg" alt="Salvatore Siracusa presenting Payload-as-a-Service">
+  </figure>
+
+  <div class="abody">
+    <p>A satellite is payload plus bus.</p>
+    <p>The payload is the part that does the work: a GPU, a camera, a sensor, an experiment. The bus is everything that keeps it alive in orbit — structure, power, thermal control, attitude, communications.</p>
+    <p><strong>Payload-as-a-Service</strong> means the customer builds only the payload. The provider supplies the bus, the launch, and the operations. The customer differentiates. The rest is infrastructure.</p>
+
+    <h2>The chain is single</h2>
+    <ol class="steps">
+      <li><strong>Launch</strong> — physical access to space.</li>
+      <li><strong>Payload-as-a-Service</strong> — orbit in months, not years.</li>
+      <li><strong>Orbital compute</strong> — energy and heat solved by physics.</li>
+      <li><strong>Superintelligence</strong> — intelligence that scales beyond one planet.</li>
+    </ol>
+
+    <figure>
+      <img src="img/updates/slide-starcloud.jpg" alt="Starcloud data center modules in orbit">
+      <figcaption>Starcloud: first data-center-class compute in orbit</figcaption>
+    </figure>
+
+    <h2>Starcloud × NVIDIA</h2>
+    <p>In November 2025 Starcloud-1 flew an NVIDIA H100 — a true data-center GPU, roughly one hundred times more capable than any GPU previously sent to space. With it they trained an LLM in orbit for the first time.</p>
+    <p>NVIDIA is not only a supplier. It is investing. The Vera Rubin Module targets up to 25× an H100. Starcloud valuation has reached $2.3 billion. The roadmap is 88,000 satellites and approximately 20 GW of orbital compute.</p>
+
+    <div class="anum">
+      <div><b>SC-1</b><span>H100 in orbit</span></div>
+      <div><b>SC-3</b><span>Starship-class, 100+ kW</span></div>
+      <div><b>88,000</b><span>satellites in vision</span></div>
+      <div><b>20 GW</b><span>orbital compute</span></div>
+    </div>
+
+    <h2>Why the physics works</h2>
+    <p>In orbit the Sun is available 24/7. Radiative cooling into the vacuum is free. There are no terrestrial limits on energy or land.</p>
+    <p>Anyone still building data centers on the ground is solving the wrong problem.</p>
+
+    <figure>
+      <img src="img/updates/slide-compute.jpg" alt="Compute is moving off-world">
+      <figcaption>Payload-as-a-Service + Orbital GPU compute = critical infrastructure of the species</figcaption>
+    </figure>
+
+    <h2>0.73 → 1.00</h2>
+    <p>The Kardashev scale measures how much of its environment’s energy a civilization can harness. We sit at 0.73. Type I is full planetary energy control.</p>
+    <p>Reaching 1.00 requires more than better rockets. It requires intelligence and compute that are no longer constrained by a single planet’s surface.</p>
+    <p>Payload-as-a-Service is the industrial layer that makes that transition possible.</p>
+
+    <p class="asign">Salvatore Siracusa<br>VoidLink · 2026</p>
+  </div>
+</section>
+</main>
 
 <section class="sec ct" id="contact">
   <div><span class="lab">// Contact</span><h2 class="sp">Let's build the next experiment.</h2></div>
@@ -294,20 +375,25 @@ gsap.from('.f',{opacity:0,y:30,stagger:.1,duration:.8,scrollTrigger:{trigger:'#f
 /* views, theme, menu */
 const LG=document.querySelector('.logo img').src;
 const UP=[
-{t:'img',src:'img/updates/presentation-01.jpg',date:'2026-10-14',cap:'Payload-as-a-Service: the only path to scale orbital infrastructure. Presented at Cloud Computing Technologies. A satellite is payload + bus. The customer builds the differentiating payload. Structure, power, thermal, attitude, launch and operations are the service. Starcloud has demonstrated the first data-center-class compute in orbit — NVIDIA H100 on SC-1, first LLM trained beyond Earth. Continuous solar, radiative cooling in vacuum, zero terrestrial energy or land constraints. The chain is single: Launch → Payload-as-a-Service → Orbital Compute → Superintelligence. 0.73 → 1.00.'},
-{t:'img',src:'img/updates/slide-starcloud.jpg',date:'2026-10-14',cap:'Starcloud × NVIDIA: first data-center-class compute in orbit. SC-1 flew an H100. SC-3 targets Starship-class, 100+ kW. Vision: 88,000 satellites, ~20 GW orbital compute. Physics advantage is permanent.'},
-{t:'img',src:'img/updates/presentation-03.jpg',date:'2026-10-14',cap:'The customer brings the idea. The rest is a service. Payload → Integration → Operations → Data. Orbit in months, not years.'},
+{t:'article',slug:'payload-as-a-service',src:'img/updates/presentation-01.jpg',date:'2026-10-14',cap:'Payload-as-a-Service: the only path to scale. Presented at Cloud Computing Technologies. Starcloud has demonstrated the first data-center-class compute in orbit.'},
 {t:'x',url:'https://x.com/VoidLink_space',date:'2026-10-13',cap:'Example video update from X.'},
 {t:'x',url:'https://x.com/VoidLink_space',date:'2026-07-24',cap:'Second example video from X.'}];
 const fmt=d=>new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
-document.getElementById('feed').innerHTML=UP.sort((a,b)=>b.date.localeCompare(a.date)).map(u=>{const im=u.src?'<img src="'+u.src+'" alt="">':'<img class="wm" src="'+LG+'" alt="">';
-const m=u.t=='x'?'<a class="um" href="'+u.url+'" target="_blank" rel="noopener">'+im+'<span class="pl"><i></i></span><span class="mono xl">Video · Watch on X ↗</span></a>':'<div class="um">'+im+'</div>';
-return '<article class="up" data-r>'+m+'<div class="upm mono"><span>'+(u.t=='x'?'Video':'Image')+'</span><span>—</span><time datetime="'+u.date+'">'+fmt(u.date)+'</time></div><p class="upc">'+u.cap+'</p></article>'}).join('');
+document.getElementById('feed').innerHTML=UP.sort((a,b)=>b.date.localeCompare(a.date)).map(u=>{
+const im=u.src?'<img src="'+u.src+'" alt="">':'<img class="wm" src="'+LG+'" alt="">';
+let m,label;
+if(u.t=='x'){m='<a class="um" href="'+u.url+'" target="_blank" rel="noopener">'+im+'<span class="pl"><i></i></span><span class="mono xl">Video · Watch on X ↗</span></a>';label='Video'}
+else if(u.t=='article'){m='<a class="um" href="#/article-'+u.slug+'">'+im+'<span class="mono xl" style="position:absolute;bottom:16px;left:16px;background:rgba(0,0,0,.7);padding:6px 12px;border-radius:6px">Article · Read →</span></a>';label='Article'}
+else{m='<div class="um">'+im+'</div>';label='Image'}
+return '<article class="up" data-r>'+m+'<div class="upm mono"><span>'+label+'</span><span>—</span><time datetime="'+u.date+'">'+fmt(u.date)+'</time></div><p class="upc">'+u.cap+'</p></article>'}).join('');
 const V=[...document.querySelectorAll('[data-v]')],NL=[...document.querySelectorAll('nav ul a[href^="#/"]')];
 const sw=el=>{el.innerHTML=el.textContent.trim().split(/\s+/).map(w=>'<span class="w"><i>'+w+'</i></span> ').join('')};
 function enter(v){if(!window.gsap)return;v.querySelectorAll('.sp').forEach(h=>{if(!h.dataset.s){sw(h);h.dataset.s=1}gsap.from(h.querySelectorAll('i'),{yPercent:115,duration:1,ease:'power4.out',stagger:.07})});gsap.from(v.querySelectorAll('[data-r]'),{opacity:0,y:40,duration:.8,stagger:.08,delay:.2,ease:'power3.out',clearProps:'all'});window.ScrollTrigger&&ScrollTrigger.refresh()}
 function route(f){const h=location.hash;if(h&&h.slice(0,2)!='#/')return;const n=h.slice(2)||'home',v=V.find(e=>e.dataset.v==n)||V[0],k=v.dataset.v;
-V.forEach(e=>e.classList.toggle('on',e===v));NL.forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#/'+(k=='home'?'':k)));mn.classList.remove('open');
+V.forEach(e=>e.classList.toggle('on',e===v));
+const navKey=k.startsWith('article-')?'updates':k;
+NL.forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#/'+(navKey=='home'?'':navKey)));
+mn.classList.remove('open');
 if(!f)(window.L?L.scrollTo(0,{immediate:true}):scrollTo(0,0));dispatchEvent(new Event('resize'));
 if(k!='home')enter(v);else if(!f&&window.ScrollTrigger)ScrollTrigger.refresh()}
 th.onclick=()=>{const r=document.documentElement,d=r.dataset.theme=='dark';r.dataset.theme=d?'light':'dark';th.textContent=d?'◐':'◑'};
