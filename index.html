@@ -318,7 +318,10 @@ b:`<div class="ub"><p>We are developing THREX, a modular cold-gas and hybrid wat
 <h4 class="mono">Performance targets (sea-level, 2 L PET baseline)</h4><ul><li>Peak ideal thrust: ~80–110 N</li><li>Realistic average thrust: 15–40 N</li><li>Burn time: software-selectable 0.5–5 s</li><li>Expected altitude (single bottle, stable airframe): 30–60 m</li><li>Dual-bottle mode: +10–30 % total impulse with a flatter thrust curve</li></ul>
 <p>Every dimension was selected from first principles. Throat diameter of 10 mm balances mass flow, valve Cv, and vehicle acceleration profile. Pressure is deliberately capped at 8 bar so the PET bottle itself becomes the structural pressure vessel, with no certified high-pressure COPV required. Adapters, nozzle, and interfaces are FDM-optimized for minimal print time and mass while maintaining sealing reliability under cyclic load.</p>
 <h4 class="mono">THREX is intended as</h4><ol><li>Primary propulsion for model rockets</li><li>Modular RCS building block for experimental vehicles</li><li>Open, reproducible platform for rapid hardware iteration</li></ol>
-<p>All critical geometry, bill of materials, control logic, and safety constraints are released as open technical disclosure. Physical testing remains the final authority.</p></div>`}];
+<p>All critical geometry, bill of materials, control logic, and safety constraints are released as open technical disclosure. Physical testing remains the final authority.</p></div>`},
+{t:'x',url:'https://x.com/VoidLink_',date:'2026-10-13',cap:'Example video update from X. Replace url, date and caption.'},
+{t:'img',src:'',date:'2026-09-02',cap:'Example image update. Set src to a data URI.'},
+{t:'x',url:'https://x.com/VoidLink_',date:'2026-07-24',cap:'Second example video from X.'}];
 const fmt=d=>new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
 document.getElementById('feed').innerHTML=UP.sort((a,b)=>b.date.localeCompare(a.date)).map(u=>{const im=u.src?'<img src="'+u.src+'" alt="'+(u.alt||'')+'">':'<img class="wm" src="'+LG+'" alt="">';
 const m=u.t=='x'?'<a class="um" href="'+u.url+'" target="_blank" rel="noopener">'+im+'<span class="pl"><i></i></span><span class="mono xl">Video · Watch on X ↗</span></a>':'<div class="um">'+im+(u.ov?'<img class="ov" src="'+u.ov+'" alt="THREX">':'')+'</div>';
